@@ -40,6 +40,19 @@ let nextID = 8
 
 // Read
 function all() {
+  // sort by name
+  animals.sort(function (a, b) {
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    } else if (nameA > nameB) {
+      return 1;
+    } else {
+    // names must be equal
+    return 0;
+    }
+  })
   return animals
 }
 
@@ -59,6 +72,22 @@ function find(id) {
   return foundAnimal
 }
 
+function search(query) {
+  // Create an array to store the results of the search
+  var searchedAnimals = new Array()
+  // Loop through all of the animals in the database
+  animals.forEach((animal) => {
+    // Store the name of each animal in it's lowercase form
+    const name = animal.name.toLowerCase()
+    // If the name matches the query, add the animal to the array we created earlier
+    if (name.includes(query)) {
+      searchedAnimals.push(animal)
+    } 
+  })
+  return searchedAnimals
+  console.log(searchedAnimals)
+  console.log(animals)
+}
 // Create
 function create(attributes) {
   // Create new animal record copying attributes accross and assigning it an id
@@ -122,5 +151,6 @@ module.exports = {
   find,
   create,
   update,
-  destroy
+  destroy,
+  search
 }

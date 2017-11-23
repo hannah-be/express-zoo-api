@@ -18,7 +18,8 @@ server.get('/about', (req, res) => {
 // server.use('/', ticketsRouter)
 server.use('/', [
   require('./routes/animals'),
-  require('./routes/tickets')
+  require('./routes/tickets'),
+  require('./routes/seacritters')
 
 ])
 server.listen(7000, () => {

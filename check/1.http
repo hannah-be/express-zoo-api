@@ -9,6 +9,10 @@ GET http://localhost:7000/asdgasd
 ###
 GET http://localhost:7000/animals
 ###
+GET http://localhost:7000/seacritters
+###
+GET http://localhost:7000/seacritters/1
+###
 POST http://localhost:7000/animals
 Content-Type: application/json
 
@@ -17,4 +21,32 @@ Content-Type: application/json
   "count": 15
 }
 ###
-DELETE  http://localhost:7000/animals/2
+DELETE  http://localhost:7000/animals/4
+
+###
+PATCH http://localhost:7000/animals/2
+Content-Type: application/json
+
+{
+  "count": 5
+}
+
+
+###
+POST http://localhost:7000/seacritters
+Content-Type: application/json
+
+{
+  "name": "Porpoise",
+  "count": 2
+}
+###
+DELETE  http://localhost:7000/seacritters/4
+
+###
+PATCH http://localhost:7000/seacritters/2
+Content-Type: application/json
+
+{
+  "count": 5
+}

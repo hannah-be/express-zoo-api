@@ -4,9 +4,26 @@ const Animal = require('../models/animal')
 const router = express.Router()
 
 router.get('/animals', (req, res) => {
+  if (Object.keys(req.query).length != 0) {
+    const nameQuery = req.query.name.toLowerCase()
+    let searchedAnimals = Animal.search(nameQuery)
+    let animal = Animal.all()
+    if (searchedAnimals.length > 0) {
+      res.json(searchedAnimals)
+    } else {
+      res.json({ error: `No animal found` })
+    }
+  } else {
+    console.log(Animal.all())
+    res.json(Animal.all())
+  }
+})
+
+router.get('/animals', (req, res) => {
   const animals = Animal.all()
   res.json(animals)
 })
+
 
 router.get('/animals/:id', (req, res) => {
   const id = req.params['id']
