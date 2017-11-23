@@ -18,10 +18,25 @@ let animals = [
     id: 4,
     name: 'Zebra',
     count: 6
+  },
+  {
+    id: 5,
+    name: 'Flamingo',
+    count: 58
+  },
+  {
+    id: 6,
+    name: 'Sun bear',
+    count: 2
+  },
+  {
+    id: 7,
+    name: 'Sloth',
+    count: 5
   }
 ]
 
-let nextID = 5
+let nextID = 8
 
 // Read
 function all() {
@@ -72,17 +87,33 @@ function update(id, attributes) {
 }
 
 // Destroy
+// function destroy(id) {
+//   id = parseInt(id, 10)
+//   //  indexOf(id)
+//   let index = animals.indexOf(animals[id])
+//   if (index === -1) {
+//     return null
+//   }
+//   animals.splice(index, 1);
+//   const removed = animals.splice((index - 1), 1)
+//   return removed[0]
+  
+// }
+
 function destroy(id) {
+  // Ensure `id` is an integer
   id = parseInt(id, 10)
-  //  indexOf(id)
-  let index = animals.indexOf(animals[id])
+  // Find the animal with this particular id
+  const index = animals.findIndex((animal) => animal.id === id)
+  // Check if index was not found
   if (index === -1) {
     return null
   }
-  animals.splice(index, 1);
-  const removed = animals.splice((index - 1), 1)
+
+  // Remove the animal at this index
+  const removed = animals.splice(index, 1)
+  // Return the removed animal
   return removed[0]
-  
 }
 
 
