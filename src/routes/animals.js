@@ -11,7 +11,13 @@ router.get('/animals', (req, res) => {
 router.get('/animals/:id', (req, res) => {
   const id = req.params['id']
   const animal = Animal.find(id)
-  res.json(animal)
+  if (animal) {
+    // If animal was found
+    res.json(animal)
+  } else {
+    // If animal was not found
+    res.status(404).json({ error: `The animal with ID ${id} was not found.` })
+  }
 })
 
 module.exports = router
