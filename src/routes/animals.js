@@ -8,4 +8,10 @@ router.get('/animals', (req, res) => {
   res.json(animals)
 })
 
+router.get('/animals/:id', (req, res) => {
+  const id = req.params['id']
+  const animal = Animal.find(id)
+  res.json(animal)
+})
+
 module.exports = router

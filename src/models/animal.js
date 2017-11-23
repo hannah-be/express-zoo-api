@@ -42,5 +42,6 @@ function find(id) {
 }
 
 module.exports = {
-  all
+  all, 
+  find
 }
