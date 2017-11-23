@@ -9,4 +9,12 @@ GET http://localhost:7000/asdgasd
 ###
 GET http://localhost:7000/animals
 ###
+POST http://localhost:7000/animals
+Content-Type: application/json
+
+{
+  "name": "Lion",
+  "count": 15
+}
+###
 GET http://localhost:7000/animals/asdf
