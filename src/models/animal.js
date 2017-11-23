@@ -54,17 +54,42 @@ function create(attributes) {
   nextID += 1
   // Add animal to the array that stores our data
   animals.push(newAnimal)
-  // 
   return newAnimal
 }
 
 // Update
+function update(id, attributes) {
+  const animal = find(id)
+  // check if animal not found
+  if (!animal) {
+    return null
+  }
+  // Warning: attributes may contain 'id' or other unwanted attributes
+  Object.assign(animal, attributes)
+  // 
+  return animal
+
+}
 
 // Destroy
+function destroy(id) {
+  id = parseInt(id, 10)
+  //  indexOf(id)
+  let index = animals.indexOf(animals[id])
+  if (index === -1) {
+    return null
+  }
+  animals.splice(index, 1);
+  const removed = animals.splice((index - 1), 1)
+  return removed[0]
+  
+}
 
 
 module.exports = {
   all, 
   find,
-  create
+  create,
+  update,
+  destroy
 }

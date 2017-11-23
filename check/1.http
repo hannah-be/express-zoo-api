@@ -17,4 +17,4 @@ Content-Type: application/json
   "count": 15
 }
 ###
-GET http://localhost:7000/animals/asdf
+DELETE  http://localhost:7000/animals/2
