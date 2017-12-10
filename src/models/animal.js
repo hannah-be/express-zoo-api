@@ -2,37 +2,44 @@ let animals = [
   {
     id: 1,
     name: 'Meerkat',
-    count: 27
+    count: 27,
+    area: 2 
   },
   {
     id: 2,
     name: 'Elephant',
-    count: 3
+    count: 3,
+    area: 2
   },
   {
     id: 3,
     name: 'Boa Constrictor',
-    count: 1
+    count: 1,
+    area: 7
   },
   {
     id: 4,
     name: 'Zebra',
-    count: 6
+    count: 6,
+    area: 2
   },
   {
     id: 5,
     name: 'Flamingo',
-    count: 58
+    count: 58,
+    area: 5
   },
   {
     id: 6,
     name: 'Sun bear',
-    count: 2
+    count: 2,
+    area: 1
   },
   {
     id: 7,
     name: 'Sloth',
-    count: 5
+    count: 5,
+    area: 7
   }
 ]
 

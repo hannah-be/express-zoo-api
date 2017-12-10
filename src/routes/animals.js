@@ -11,7 +11,7 @@ router.get('/animals', (req, res) => {
     if (searchedAnimals.length > 0) {
       res.json(searchedAnimals)
     } else {
-      res.json({ error: `No animal found` })
+      res.json({ message: 'No match found' })
     }
   } else {
     console.log(Animal.all())
@@ -23,7 +23,6 @@ router.get('/animals', (req, res) => {
   const animals = Animal.all()
   res.json(animals)
 })
-
 
 router.get('/animals/:id', (req, res) => {
   const id = req.params['id']
@@ -68,7 +67,6 @@ router.patch('/animals/:id', (req, res) => {
 //     res.status(404).json({ error: `There is no animal with id: ${id}` })
 //   }
 // })
-
 
 router.delete('/animals/:id', (req, res) => {
   const id = req.params['id']
