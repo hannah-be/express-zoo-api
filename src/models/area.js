@@ -81,7 +81,7 @@ function update(id, attributes) {
 // Destroy
 function destroy(id) {
   id = parseInt(id, 10)
-  cosnt index = areas.findIndex((area) => area.id === id)
+  const index = areas.findIndex((area) => area.id === id)
   if (index === -1) {
     return null
   }

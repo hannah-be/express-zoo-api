@@ -1,4 +1,6 @@
+// Require in the express library
 const express = require('express')
+// Create an express Router
 const router = express.Router()
 
 router.get('/tickets', (req, res) => {
@@ -9,4 +11,5 @@ router.get('/tickets', (req, res) => {
   })
 })
 
+// Export the router
 module.exports = router

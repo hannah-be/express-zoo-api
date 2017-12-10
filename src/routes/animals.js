@@ -4,8 +4,11 @@ const Animal = require('../models/animal')
 const router = express.Router()
 
 router.get('/animals', (req, res) => {
+  // If a query exists in the request (.keys adds index)
   if (Object.keys(req.query).length != 0) {
+    // store the query
     const nameQuery = req.query.name.toLowerCase()
+    // Run the .search function created in the model
     let searchedAnimals = Animal.search(nameQuery)
     let animal = Animal.all()
     if (searchedAnimals.length > 0) {

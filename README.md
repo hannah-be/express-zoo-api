@@ -10,7 +10,11 @@
 - ``server.listen(port, () => {console.log('Started at http://localhost:port')})``
 - ``yarn add nodemon --dev`` as a server manager
 - Add scripts to package.json: ``"scripts": {"dev":"nodemon src/server.js"}`` to allow you to run the server from the terminal with ``yarn dev``
-- 
+
+## Structure
+- Create ``routes`` folder to store specific routes (server.js will also have to hold middleware). 
+- Create ``tickets.js`` file with ``const express = require('express')`` creates a mini-server that we can attach our own routes to. 
+- Create ``models`` folder to store data for each model and its CRUD methods and then require file in the relevant routes file.
 
 
 

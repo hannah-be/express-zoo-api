@@ -57,7 +57,7 @@ function all() {
       return 1;
     } else {
     // names must be equal
-    return 0;
+      return 0;
     }
   })
   return animals
